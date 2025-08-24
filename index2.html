@@ -233,7 +233,19 @@
 <script type='text/javascript'>
 	function initEmbeddedMessaging() {
 		try {
-			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+			embeddedservice_bootstrap.settings.language = 'en_US'; 
+
+			var varAccountId = "";
+        
+            window.addEventListener("onEmbeddedMessagingReady", e => {
+            //log event
+            console.log("onEmbeddedMessagingReady event triggered");
+      
+            //Set invisible prechat field
+            embeddedservice_bootstrap.prechatAPI.setHiddenPrechatFields({
+                "Account_Id" : varAccountId,
+                });
+            });
 
 			embeddedservice_bootstrap.init(
 				'00DVA000003qL6f',
