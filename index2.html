@@ -230,5 +230,26 @@
         </form>
     </div>
 
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00DVA000003qL6f',
+				'External_Billing_Agent',
+				'https://kaseya--zendeskpoc.sandbox.my.site.com/ESWExternalBillingAgent1755884494986',
+				{
+					scrt2URL: 'https://kaseya--zendeskpoc.sandbox.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://kaseya--zendeskpoc.sandbox.my.site.com/ESWExternalBillingAgent1755884494986/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+
 </body>
 </html>
