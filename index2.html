@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create a New Billing Request</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f4f7;
+        }
+        .header {
+            background-color: #003366;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .header .support-info {
+            font-size: 14px;
+        }
+        .header .icon {
+            font-size: 24px;
+        }
+        .nav-header {
+            background-color: #004d99;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .nav-header .breadcrumbs {
+            font-size: 12px;
+            opacity: 0.8;
+        }
+        .content {
+            padding: 40px;
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .content h2 {
+            margin-top: 0;
+            color: #333;
+        }
+        .content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .alert {
+            background-color: #e6f7ff;
+            border-left: 4px solid #1890ff;
+            padding: 15px;
+            margin: 20px 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        .alert .icon {
+            color: #1890ff;
+            font-size: 20px;
+            margin-right: 10px;
+        }
+        .alert p {
+            margin: 0;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            font-size: 16px;
+        }
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+        .form-group .sub-text {
+            font-size: 12px;
+            color: #888;
+            margin-top: 5px;
+        }
+        .attachments {
+            border: 2px dashed #ccc;
+            border-radius: 4px;
+            text-align: center;
+            padding: 30px;
+            margin-top: 20px;
+        }
+        .attachments button {
+            background-color: #e6f7ff;
+            border: 1px solid #91d5ff;
+            color: #1890ff;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .buttons {
+            text-align: right;
+            margin-top: 30px;
+        }
+        .buttons button {
+            padding: 12px 25px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 10px;
+        }
+        .buttons .submit {
+            background-color: #1890ff;
+            color: white;
+        }
+        .buttons .cancel {
+            background-color: #e0e0e0;
+            color: #555;
+        }
+        .footer {
+            background-color: #003366;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+            margin-top: 40px;
+        }
+        .dropdown-menu {
+            border: 1px solid #ccc;
+            border-top: none;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .dropdown-menu div {
+            padding: 8px 10px;
+            cursor: pointer;
+        }
+        .dropdown-menu div:hover {
+            background-color: #f0f4f7;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="logo">
+            <p>Kaseya Support</p>
+            <p style="font-size: 12px; opacity: 0.7;">Get the help you need</p>
+        </div>
+        <div class="icon">&#x2630;</div>
+    </div>
+
+    <div class="content">
+        <h2>Create a New Billing Request</h2>
+        <p>If you can't find a solution to your problem in our Knowledge Base, submit a new billing request and one of our team members will begin investigating the problem and get back to you soon.</p>
+
+        <div class="alert">
+            <div class="icon">&#x2139;</div>
+            <p>You are currently not signed in<br>If you want to copy additional users in to this request, you will need to <a href="#" style="color: #1890ff; text-decoration: none;">Sign In</a> and refresh this page.</p>
+        </div>
+
+        <form>
+            <div class="form-group">
+                <label for="email">Your email address</label>
+                <input type="email" id="email" name="email">
+            </div>
+
+            <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject">
+            </div>
+
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" placeholder="Please enter the details of your request. A member of our support staff will respond as soon as possible."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+                <label for="issue">Primary Billing Issue</label>
+                <select id="issue" name="issue">
+                    <option value="account-update">Account update</option>
+                    <option value="billing-issue">Billing issue</option>
+                    <option value="contract">Contract</option>
+                    <option value="inquiry" selected>Inquiry</option>
+                    <option value="knowledge-portal">Knowledge portal</option>
+                    <option value="payment-credit">Payment / Credit application</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="invoices">Invoices</label>
+                <input type="text" id="invoices" name="invoices">
+            </div>
+
+            <div class="form-group">
+                <label for="attachments">Attachments</label>
+                <div class="attachments">
+                    <p>Drag files here to upload</p>
+                    <button type="button">Add file</button>
+                </div>
+            </div>
+
+            <div class="buttons">
+                <button type="submit" class="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+</body>
+</html>
